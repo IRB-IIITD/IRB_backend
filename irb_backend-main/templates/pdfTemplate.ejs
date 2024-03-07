@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      /* Add custom styles to further enhance the design */
+      .card-header {
+        background-color: #007bff;
+        color: #fff;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+      }
+      .card-body {
+        padding: 2rem;
+        font-size: 18px;
+        background-color: #f7f7f7;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+      .card-text {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <!-- Add a navbar at the top of the page -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Form</a>
+    </nav>
+    <div class="container mt-5">
+      <!-- Add a container to hold the questions and answers -->
+      <% for(var i=0; i< questions.length; i++) { %>
+        <div class="card my-4">
+          <div class="card-header">
+            <h5 class="font-weight-bold">Ques. <%= questions[i].question %></h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Ans. <%= questions[i].answer %></p>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </body>
+</html>
