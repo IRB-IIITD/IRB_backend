@@ -125,7 +125,7 @@ router.get(
         try {
             const applications = await Application.find({
                 user: req.user._id,
-                pending: false,
+                // pending: false,
                 approved: false,
             }).populate("user");
 
@@ -165,10 +165,10 @@ router.get(
                 application_id: req.params.applicationId,
             });
 
-            if (application.pending) {
-                application.pending = false;
-                await application.save();
-            }
+            // if (application.pending) {
+            //     application.pending = false;
+            await application.save();
+            // }
 
             res.status(200).json(application);
         } catch (err) {
